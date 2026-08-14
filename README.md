@@ -193,17 +193,27 @@ or download manually from the Kaggle page and place
 
 ## How to Run
 
-```bash
-# Full pipeline from raw CSV to trained model
-python -m src.data_cleaning        # -> data/processed/telco_churn_clean.csv
-python -m src.feature_engineering  # -> data/processed/telco_churn_features.csv
-python -m src.train                # -> models/final_churn_pipeline.joblib
-python -m src.build_database       # -> data/processed/telco_churn.db (SQL layer)
+Full pipeline, raw CSV to trained model (run in order; each step writes the file noted):
 
-# Notebooks: run 01 -> 07 in order (jupyter lab notebooks/)
-# SQL:       sqlite3 -column -header data/processed/telco_churn.db  (queries in sql/)
-# App:       streamlit run app/app.py
+| Command | Produces |
+|---|---|
+| `python -m src.data_cleaning` | `data/processed/telco_churn_clean.csv` |
+| `python -m src.feature_engineering` | `data/processed/telco_churn_features.csv` |
+| `python -m src.train` | `models/final_churn_pipeline.joblib` |
+| `python -m src.build_database` | `data/processed/telco_churn.db` (SQL layer) |
+
+```bash
+python -m src.data_cleaning
+python -m src.feature_engineering
+python -m src.train
+python -m src.build_database
 ```
+
+Other entry points:
+
+- **Notebooks:** `jupyter lab notebooks/` — run `01` through `07` in order.
+- **SQL:** `sqlite3 -column -header data/processed/telco_churn.db` — queries live in `sql/`.
+- **App:** `streamlit run app/app.py`
 
 ## Example Prediction
 
