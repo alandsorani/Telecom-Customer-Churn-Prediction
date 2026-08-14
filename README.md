@@ -174,12 +174,14 @@ Requires **Python 3.11+** (developed on 3.12.14).
 ```bash
 git clone https://github.com/alandsorani/Telecom-Customer-Churn-Prediction.git
 cd Telecom-Customer-Churn-Prediction
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**macOS note:** XGBoost needs the OpenMP runtime: `brew install libomp`.
+**macOS note:** plain `python`/`pip` aren't on PATH by default — use `python3` to create the
+venv; once activated, `python`/`pip` work normally inside it. XGBoost also needs the OpenMP
+runtime: `brew install libomp`.
 
 **Dataset** (choose one):
 ```bash
