@@ -192,7 +192,7 @@ runtime: `brew install libomp`.
 # Kaggle CLI (needs ~/.kaggle/kaggle.json API token)
 kaggle datasets download -d blastchar/telco-customer-churn -p data/raw --unzip
 ```
-or download manually from the Kaggle page https://www.kaggle.com/datasets/blastchar/telco-customer-churn and place
+or download manually from the Kaggle page and place
 `WA_Fn-UseC_-Telco-Customer-Churn.csv` in `data/raw/`.
 
 ## How to Run
