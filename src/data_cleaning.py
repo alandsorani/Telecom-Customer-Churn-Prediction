@@ -20,7 +20,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from src.config import CLEAN_DATA_FILE, RAW_DATA_FILE, TARGET_COLUMN
+from src.config import (
+    CLEAN_DATA_FILE,
+    DATASET_SOURCE_URL,
+    RAW_DATA_FILE,
+    TARGET_COLUMN,
+)
 
 EXPECTED_COLUMNS = [
     "customerID", "gender", "SeniorCitizen", "Partner", "Dependents",
@@ -57,8 +62,10 @@ def load_raw(path: Path = RAW_DATA_FILE) -> pd.DataFrame:
     """
     if not Path(path).exists():
         raise FileNotFoundError(
-            f"{path} not found. Download the dataset first — see README "
-            "'Installation' for the Kaggle instructions."
+            f"{path} not found.\n"
+            f"Download the dataset from {DATASET_SOURCE_URL} and place it at "
+            f"{path} — see data/README.md or the main README's Installation "
+            "section for full instructions."
         )
     df = pd.read_csv(path)
     if list(df.columns) != EXPECTED_COLUMNS:

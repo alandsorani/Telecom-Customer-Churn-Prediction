@@ -15,6 +15,12 @@ MODELS_DIR = PROJECT_ROOT / "models"
 FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
 SQL_DIR = PROJECT_ROOT / "sql"
 
+# Single source of truth for where the raw data comes from. The CSV itself is
+# git-ignored (size/licensing — see data/README.md), so this URL is the link
+# between the repo and the external dataset; load_raw() cites it directly.
+DATASET_SOURCE_URL = "https://www.kaggle.com/datasets/blastchar/telco-customer-churn"
+DATASET_SOURCE_NAME = "Telco Customer Churn (Kaggle, originally an IBM sample dataset)"
+
 RAW_DATA_FILE = DATA_RAW / "WA_Fn-UseC_-Telco-Customer-Churn.csv"
 CLEAN_DATA_FILE = DATA_PROCESSED / "telco_churn_clean.csv"
 SQLITE_DB_FILE = DATA_PROCESSED / "telco_churn.db"

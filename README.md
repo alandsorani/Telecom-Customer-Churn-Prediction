@@ -27,6 +27,10 @@ gone — so the company needs to know **who is at risk, why, and what to do abou
 services, contract/billing attributes, and a Yes/No churn label. Single snapshot — no
 timestamps, no cost data (both limitations are handled explicitly; see Limitations).
 
+The CSV itself is not committed (see [`data/README.md`](data/README.md) for the source link,
+license note, and expected file layout — that file, plus the `DATASET_SOURCE_URL` constant in
+[`src/config.py`](src/config.py), is the version-controlled link to the external dataset).
+
 The CSV is **not** committed to this repo (size/licensing hygiene); see Installation.
 
 ## Objectives
